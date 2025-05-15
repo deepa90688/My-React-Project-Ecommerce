@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { products } from "../date/product.js";
 import ProductCard from "../components/ProductCard";
-import { FaStoreAlt } from "react-icons/fa"; // 🎯 Fancy store icon
-// Remove: import "./Home.css"; — if you're switching to inline or scoped styles
+import { FaStoreAlt } from "react-icons/fa";
 
-export default function Home() {
+const Home = () => {
     const [search, setSearch] = useState("");
     const [category, setCategory] = useState("All");
 
-    const filtered = products.filter(
+    const filteredProducts = products.filter(
         (p) =>
             (category === "All" || p.category === category) &&
             p.name.toLowerCase().includes(search.toLowerCase())
@@ -18,59 +17,59 @@ export default function Home() {
 
     const styles = {
         container: {
-            padding: "30px",
+            padding: "20px",
             fontFamily: "'Segoe UI', sans-serif",
             backgroundColor: "#f9f9ff",
             minHeight: "100vh",
-            color: "#222"
+            color: "#222",
         },
         heading: {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             color: "rebeccapurple",
-            gap: "10px",
-            marginBottom: "25px"
+            gap: "8px",
+            marginBottom: "20px",
         },
         filters: {
             display: "flex",
             justifyContent: "center",
-            gap: "15px",
-            marginBottom: "35px",
-            flexWrap: "wrap"
+            gap: "10px",
+            marginBottom: "20px",
+            flexWrap: "wrap",
         },
         input: {
-            padding: "10px",
-            fontSize: "1rem",
+            padding: "8px",
+            fontSize: "0.9rem",
             borderRadius: "6px",
             border: "1px solid #ccc",
-            minWidth: "220px"
+            minWidth: "180px",
         },
         select: {
-            padding: "10px",
-            fontSize: "1rem",
+            padding: "8px",
+            fontSize: "0.9rem",
             borderRadius: "6px",
             border: "1px solid #ccc",
-            minWidth: "180px"
+            minWidth: "150px",
         },
         grid: {
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "20px"
-        }
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "15px",
+        },
     };
 
     return (
         <div style={styles.container}>
             <h1 style={styles.heading}>
-                <FaStoreAlt size={30} color="rebeccapurple" />
-                Explore Our Products
+                <FaStoreAlt size={24} color="rebeccapurple" />
+                Explore Products
             </h1>
             <div style={styles.filters}>
                 <input
                     type="text"
-                    placeholder="🔎 Search for products..."
+                    placeholder="Search for products..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                     style={styles.input}
@@ -86,10 +85,12 @@ export default function Home() {
                 </select>
             </div>
             <div style={styles.grid}>
-                {filtered.map((product) => (
+                {filteredProducts.map((product) => (
                     <ProductCard key={product.id + product.name} product={product} />
                 ))}
             </div>
         </div>
     );
-}
+};
+
+export default Home;

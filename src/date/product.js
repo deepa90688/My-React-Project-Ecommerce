@@ -1,21 +1,21 @@
-import product1 from "../assets/images/images3.png";
-import product2 from "../assets/images/im1.png";
-import product3 from "../assets/images/im1.png";
-import product4 from "../assets/images/image4.png";
-import product5 from "../assets/images/img5.png";
+import product1 from "../assets/images/headphone.png";
+import product2 from "../assets/images/velocity sneakers.png";
+import product3 from "../assets/images/headphone.png";
+import product4 from "../assets/images/urban.png";
+import product5 from "../assets/images/jacket.png";
 
 export const products = [
   {
     id: 1,
-    name: "Velocity Sneakers",
+    name: "headphones",
     category: "Footwear",
     price: 2499,
     description: "Sleek running sneakers designed for all-day comfort.",
     image: product1,
   },
   {
-    id: 2,
-    name: "Urban Tee",
+    id:2,
+    name:"velocity sneakers",
     category: "Clothing",
     price: 799,
     description: "Minimalist cotton t-shirt with a modern streetwear vibe.",
@@ -31,7 +31,7 @@ export const products = [
   },
   {
     id: 4,
-    name: "Frostbite Jacket",
+    name: "urban",
     category: "Clothing",
     price: 1299,
     description: "Windproof, insulated winter jacket for extreme cold.",
@@ -39,7 +39,7 @@ export const products = [
   },
   {
     id: 5,
-    name: "Shadow Cap",
+    name: "Jacket",
     category: "Accessories",
     price: 499,
     description: "Stylish black cap with adjustable fit and breathable fabric.",
